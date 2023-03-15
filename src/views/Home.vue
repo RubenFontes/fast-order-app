@@ -1,22 +1,22 @@
 <template>
   <div>
     <Banner />
-    <div class="main-container">
+    <div class="main-container" id="main-container">
       <h1>Faça sua solicitação:</h1>
-      <BurgerForm />
+      <Form />
     </div>
   </div>
 </template>
 
 <script>
 import Banner from '../components/Banner'
-import BurgerForm from '../components/BurgerForm'
+import Form from '../components/Form'
 
 export default {
   name: 'Home',
   components: {
     Banner,
-    BurgerForm
+    Form
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div id="main-banner">
-    <h1>Pulcher Code</h1>
-    <p>A modern web app built with Node.js and Vue.js</p>
+    <h1 class="h1">Pedido Expresso</h1>
+    <p class="display-4">Um Web App Open Source feito com Node.js e Vue.js</p>
   </div>
 </template>
 
@@ -14,8 +14,10 @@
 <style scoped>
 
   #main-banner {
+    margin: 85px 0;
+    padding: 0 20px;
     background-color: #E6E8FF;
-    height: 40vh;
+    height: 45vh;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -23,13 +25,12 @@
   }
 
   #main-banner h1 {
-    text-align: center;
-    font-size: 60px;
-    color: black;
+    font-size: 2.5rem;
   }
 
   #main-banner p{
-    font-size: 26px;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: #2f365f;
   }
 

@@ -26,10 +26,15 @@ export default {
 </script>
 
 <style>
+
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+  }
+
+  html{
+    scroll-behavior: smooth;
   }
 
   .main-container {
@@ -39,6 +44,10 @@ export default {
 
   .main-container h1{
     font-weight: 100;
+  }
+
+  .main-container h2{
+    text-align: center;
   }
 
   h1 {

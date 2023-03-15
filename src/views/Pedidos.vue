@@ -17,3 +17,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .main-container{
+    margin: 85px 0;
+    padding: 100px 0;
+  }
+</style>

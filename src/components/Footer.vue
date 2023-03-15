@@ -1,6 +1,6 @@
 <template>
   <div id="footer">
-    <p>Pulcher Code Challenge &copy; 2023</p>
+    <p>Pulcher Code Challenge &copy; 2023 | <a class="text-muted" href="https://github.com/RubenFontes/pulcher-code-challenge">Ruben Fontes</a></p>
   </div>
 </template>
 

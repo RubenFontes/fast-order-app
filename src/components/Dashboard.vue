@@ -4,9 +4,9 @@
       <div id="burger-table-heading">
         <div class="order-id">#:</div>
         <div>Cliente:</div>
-        <div>Pão:</div>
-        <div>Carne:</div>
-        <div>Opcionais:</div>
+        <div>Tipo:</div>
+        <div>Categoria:</div>
+        <div>Opções:</div>
         <div>Ações:</div>
       </div>
     </div>
@@ -14,8 +14,8 @@
       <div class="burger-table-row" v-for="burger in burgers" :key="burger.id">
         <div class="order-number">{{ burger.id }}</div>
         <div>{{ burger.nome }}</div>
-        <div>{{ burger.pao }}</div>
-        <div>{{ burger.carne }}</div>
+        <div>{{ burger.campo1 }}</div>
+        <div>{{ burger.campo2 }}</div>
         <div>
           <ul v-for="(opcional, index) in burger.opcionais" :key="index">
             <li>{{ opcional }}</li>
@@ -32,8 +32,8 @@
       </div>
     </div>
   </div>
-  <div v-else>
-    <h2>Não há pedidos no momento!</h2>
+  <div v-else class="text-primary">
+    <h2 class="text-danger h5">Não há pedidos no momento!</h2>
   </div>
 </template>
 <script>
@@ -138,23 +138,27 @@
   }
 
   select {
-    padding: 12px 6px;
-    margin-right: 12px;
+    padding: 3px 5px;
+    margin-right: 5px;
+    max-width: 100px;
   }
 
   .delete-btn {
     background-color: #6574cd;
     font-weight: bold;
-    padding: 10px;
-    font-size: 16px;
+    padding: 5px 10px;
+    font-size: .8rem;
     margin: 0 auto;
     cursor: pointer;
     transition: .5s;
+    border: none;
+    border-radius: 2px;
+    color: white;
   }
   
   .delete-btn:hover {
-    background-color: transparent;
-    color: #222;
+    filter: brightness(0.9);
   }
+
   
 </style>

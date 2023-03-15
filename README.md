@@ -18,3 +18,6 @@ npm run build
 
 ### Personalizar configuração
 Veja [Referência de configuração](https://cli.vuejs.org/config/).
+
+## Licença
+[GPL](https://choosealicense.com/licenses/gpl-3.0/)

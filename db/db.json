@@ -1,65 +1,65 @@
 {
-  "ingredientes": {
-    "paes": [
+  "data": {
+    "tipos": [
       {
         "id": 1,
-        "tipo": "Italiano Branco"
+        "tipo": "Tipo 2"
       },
       {
         "id": 2,
-        "tipo": "3 Queijos"
+        "tipo": "Tipo 3"
       },
       {
         "id": 3,
-        "tipo": "Parmesão e Orégano"
+        "tipo": "Tipo 4"
       },
       {
         "id": 4,
-        "tipo": "Integral"
+        "tipo": "Tipo 5"
       }
     ],
-    "carnes": [
+    "categorias": [
       {
         "id": 1,
-        "tipo": "Maminha"
+        "tipo": "Categoria 2"
       },
       {
         "id": 2,
-        "tipo": "Alcatra"
+        "tipo": "Categoria 3"
       },
       {
         "id": 3,
-        "tipo": "Picanha"
+        "tipo": "Categoria 4"
       },
       {
         "id": 4,
-        "tipo": "Veggie burger"
+        "tipo": "Categoria 5"
       }
     ],
     "opcionais": [
       {
         "id": 1,
-        "tipo": "Bacon"
+        "tipo": "Opção 1"
       },
       {
         "id": 2,
-        "tipo": "Cheddar"
+        "tipo": "Opção 2"
       },
       {
         "id": 3,
-        "tipo": "Salame"
+        "tipo": "Opção 3"
       },
       {
         "id": 4,
-        "tipo": "Tomate"
+        "tipo": "Opção 4"
       },
       {
-        "id": 4,
-        "tipo": "Cebola roxa"
+        "id": 5,
+        "tipo": "Opção 5"
       },
       {
-        "id": 4,
-        "tipo": "Pepino"
+        "id": 6,
+        "tipo": "Opção 6"
       }
     ]
   },
@@ -79,27 +79,14 @@
   ],
   "burgers": [
     {
-      "nome": "Matheus Battisti",
-      "carne": "Picanha",
-      "pao": "Italiano Branco",
+      "nome": "Ruben Fontes",
+      "campo2": "Categoria 1",
+      "campo1": "Tipo 1",
       "opcionais": [
-        "Bacon",
-        "Salame",
-        "Cebola roxa"
+        "Opção 1"
       ],
       "status": "Finalizado",
       "id": 1
-    },
-    {
-      "nome": "João Coelho",
-      "carne": "Maminha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Salame",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
-      "id": 4
     }
   ]
 }

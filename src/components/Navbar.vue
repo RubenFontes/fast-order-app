@@ -4,7 +4,8 @@
       <router-link id="logo-url" to="/">
         <img id="logo" :src="logo" :alt="alt">
       </router-link>
-      <router-link to="/">Fazer Pedido</router-link>
+      <router-link to="/#main-container">Realizar Pedido</router-link>
+      <!--<a href="/#main-container">Fazer Pedido</a>-->
       <router-link to="/pedidos">Pedidos</router-link>
     </div>
   </div>
@@ -16,15 +17,21 @@ export default {
   name: "Navbar",
   props: ["logo", "alt"]
 }
+
 </script>
 
 <style scoped>
   #nav {
+    position: fixed;
+    top: 0;
+    min-width: 100vw;
+    height: 85px;
     background-color: white;
-    padding: 15px 50px;
+    padding: 0 50px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    border-bottom: 1px solid rgb(230, 230, 230);
   }
 
   #nav #logo-url {
