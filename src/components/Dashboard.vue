@@ -1,7 +1,7 @@
 <template>
-  <div id="burger-table" v-if="burgers">
+  <div id="pedido_id-table" v-if="pedidos">
     <div>
-      <div id="burger-table-heading">
+      <div id="pedido_id-table-heading">
         <div class="order-id">#:</div>
         <div>Cliente:</div>
         <div>Tipo:</div>
@@ -10,24 +10,24 @@
         <div>Ações:</div>
       </div>
     </div>
-    <div id="burger-table-rows">
-      <div class="burger-table-row" v-for="burger in burgers" :key="burger.id">
-        <div class="order-number">{{ burger.id }}</div>
-        <div>{{ burger.nome }}</div>
-        <div>{{ burger.campo1 }}</div>
-        <div>{{ burger.campo2 }}</div>
+    <div id="pedido_id-table-rows">
+      <div class="pedido_id-table-row" v-for="pedido_id in pedidos" :key="pedido_id.id">
+        <div class="order-number">{{ pedido_id.id }}</div>
+        <div>{{ pedido_id.nome }}</div>
+        <div>{{ pedido_id.campo1 }}</div>
+        <div>{{ pedido_id.campo2 }}</div>
         <div>
-          <ul v-for="(opcional, index) in burger.opcionais" :key="index">
+          <ul v-for="(opcional, index) in pedido_id.opcionais" :key="index">
             <li>{{ opcional }}</li>
           </ul>
         </div>
         <div>
-          <select name="status" class="status" @change="updateBurger($event, burger.id)">
-            <option :value="s.tipo" v-for="s in status" :key="s.id" :selected="burger.status == s.tipo">
+          <select name="status" class="status" @change="updatePedido($event, pedido_id.id)">
+            <option :value="s.tipo" v-for="s in status" :key="s.id" :selected="pedido_id.status == s.tipo">
               {{ s.tipo }}
             </option>
           </select>
-          <button class="delete-btn" @click="deleteBurger(burger.id)">Cancelar</button>
+          <button class="delete-btn" @click="deletePedido(pedido_id.id)">Cancelar</button>
         </div>
       </div>
     </div>
@@ -41,18 +41,18 @@
     name: "Dashboard",
     data() {
       return {
-        burgers: null,
-        burger_id: null,
+        pedidos: null,
+        pedido_id: null,
         status: []
       }
     },
     methods: {
       async getPedidos() {
-        const req = await fetch('http://localhost:3000/burgers')
+        const req = await fetch('https://my-json-server.typicode.com/RubenFontes/json-server-api/pedidos')
 
         const data = await req.json()
 
-        this.burgers = data
+        this.pedidos = data
 
         // Resgata os status de pedidos
         this.getStatus()
@@ -60,16 +60,16 @@
       },
       async getStatus() {
 
-        const req = await fetch('http://localhost:3000/status')
+        const req = await fetch('https://my-json-server.typicode.com/RubenFontes/json-server-api/status')
 
         const data = await req.json()
 
         this.status = data
 
       },
-      async deleteBurger(id) {
+      async deletePedido(id) {
 
-        const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        const req = await fetch(`https://my-json-server.typicode.com/RubenFontes/json-server-api/pedidos/${id}`, {
           method: "DELETE"
         });
 
@@ -78,13 +78,13 @@
         this.getPedidos()
 
       },
-      async updateBurger(event, id) {
+      async updatePedido(event, id) {
 
         const option = event.target.value;
 
         const dataJson = JSON.stringify({status: option});
 
-        const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        const req = await fetch(`https://my-json-server.typicode.com/RubenFontes/json-server-api/pedidos/${id}`, {
           method: "PATCH",
           headers: { "Content-Type" : "application/json" },
           body: dataJson
@@ -100,40 +100,49 @@
     this.getPedidos()
     }
   }
+
+  /** 
+    Public API
+    https://my-json-server.typicode.com/RubenFontes/json-server-api
+  
+    Environment Development API
+    http://localhost:3000
+  **/
+
 </script>
 
 <style scoped>
-  #burger-table {
+  #pedido_id-table {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  #burger-table-heading,
-  #burger-table-rows,
-  .burger-table-row {
+  #pedido_id-table-heading,
+  #pedido_id-table-rows,
+  .pedido_id-table-row {
     display: flex;
     flex-wrap: wrap;
   }
 
-  #burger-table-heading {
+  #pedido_id-table-heading {
     font-weight: bold;
     padding: 12px;
     border-bottom: 3px solid #333;
   }
 
-  .burger-table-row {
+  .pedido_id-table-row {
     width: 100%;
     padding: 12px;
     border-bottom: 1px solid #CCC;
   }
 
-  #burger-table-heading div,
-  .burger-table-row div {
+  #pedido_id-table-heading div,
+  .pedido_id-table-row div {
     width: 19%;
   }
 
-  #burger-table-heading .order-id,
-  .burger-table-row .order-number {
+  #pedido_id-table-heading .order-id,
+  .pedido_id-table-row .order-number {
     width: 5%;
   }
 
@@ -160,5 +169,4 @@
     filter: brightness(0.9);
   }
 
-  
 </style>

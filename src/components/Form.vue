@@ -1,7 +1,7 @@
 <template>
   <Message :msg="msg" v-show="msg" />
   <div>
-    <form id="burger-form" method="POST" @submit="createBurger">
+    <form id="pedido-form" method="POST" @submit="createPedido">
       <div class="input-container">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite o seu nome">
@@ -54,14 +54,14 @@ export default {
   },
   methods: {
     async getData() {
-      const req = await fetch('http://localhost:3000/data')
+      const req = await fetch('https://my-json-server.typicode.com/RubenFontes/json-server-api/data')
       const data = await req.json()
 
       this.tipos = data.tipos
       this.categorias = data.categorias
       this.opcionaisdata = data.opcionais
     },
-    async createBurger(e) {
+    async createPedido(e) {
 
       e.preventDefault()
 
@@ -75,7 +75,7 @@ export default {
 
       const dataJson = JSON.stringify(data)    
 
-      const req = await fetch("http://localhost:3000/burgers", {
+      const req = await fetch("https://my-json-server.typicode.com/RubenFontes/json-server-api/pedidos", {
         method: "POST",
         headers: { "Content-Type" : "application/json" },
         body: dataJson
@@ -108,7 +108,7 @@ export default {
 </script>
 
 <style scoped>
-  #burger-form {
+  #pedido-form {
     display: flex;
     flex-direction: column;
     align-items: center;
