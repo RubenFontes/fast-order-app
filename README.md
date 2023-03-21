@@ -11,6 +11,11 @@ npm install
 npm run serve
 ```
 
+### Inicializa o json-server para desenvolvimento
+```
+npm run backend
+```
+
 ### Compila e minifica para produção
 ```
 npm run build
