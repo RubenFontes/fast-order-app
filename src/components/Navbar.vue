@@ -4,7 +4,7 @@
       <router-link id="logo-url" to="/">
         <img id="logo" :src="logo" :alt="alt">
       </router-link>
-      <router-link to="/#main-container">Realizar Pedido</router-link>
+      <router-link :to="{ path: '/' }" @click="scrollToForm">Realizar Pedido</router-link>
       <!--<a href="/#main-container">Fazer Pedido</a>-->
       <router-link to="/pedidos">Pedidos</router-link>
     </div>
@@ -15,7 +15,20 @@
 
 export default {
   name: "Navbar",
-  props: ["logo", "alt"]
+  props: ["logo", "alt"],
+  methods: { 
+  scrollToForm() {
+  const el = document.getElementById('main-container');
+    if(el){
+      setTimeout(() => {
+        window.scrollTo({
+          top: 400,
+          behavior: 'smooth'
+        });
+      }, 250);
+    }
+  }
+}
 }
 
 </script>
