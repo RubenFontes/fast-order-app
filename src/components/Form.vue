@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     async getData() {
-      const req = await fetch('https://my-json-server.typicode.com/RubenFontes/json-server-api/data')
+      const req = await fetch('https://mock-api-f8is.onrender.com/data')
       const data = await req.json()
 
       this.tipos = data.tipos
@@ -75,7 +75,7 @@ export default {
 
       const dataJson = JSON.stringify(data)    
 
-      const req = await fetch("https://my-json-server.typicode.com/RubenFontes/json-server-api/pedidos", {
+      const req = await fetch("https://mock-api-f8is.onrender.com/pedidos", {
         method: "POST",
         headers: { "Content-Type" : "application/json" },
         body: dataJson
