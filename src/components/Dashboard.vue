@@ -48,7 +48,7 @@
     },
     methods: {
       async getPedidos() {
-        const req = await fetch('https://my-json-server.typicode.com/RubenFontes/json-server-api/pedidos')
+        const req = await fetch('https://mock-api-f8is.onrender.com/pedidos')
 
         const data = await req.json()
 
@@ -60,7 +60,7 @@
       },
       async getStatus() {
 
-        const req = await fetch('https://my-json-server.typicode.com/RubenFontes/json-server-api/status')
+        const req = await fetch('https://mock-api-f8is.onrender.com/status')
 
         const data = await req.json()
 
@@ -69,7 +69,7 @@
       },
       async deletePedido(id) {
 
-        const req = await fetch(`https://my-json-server.typicode.com/RubenFontes/json-server-api/pedidos/${id}`, {
+        const req = await fetch(`https://mock-api-f8is.onrender.com/pedidos/${id}`, {
           method: "DELETE"
         });
 
@@ -84,7 +84,7 @@
 
         const dataJson = JSON.stringify({status: option});
 
-        const req = await fetch(`https://my-json-server.typicode.com/RubenFontes/json-server-api/pedidos/${id}`, {
+        const req = await fetch(`https://mock-api-f8is.onrender.com/pedidos/${id}`, {
           method: "PATCH",
           headers: { "Content-Type" : "application/json" },
           body: dataJson
@@ -103,7 +103,7 @@
 
   /** 
     Public API
-    https://my-json-server.typicode.com/RubenFontes/json-server-api
+    https://mock-api-f8is.onrender.com
   
     Environment Development API
     http://localhost:3000
